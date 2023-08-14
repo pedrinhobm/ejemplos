@@ -14,7 +14,7 @@ chmod a+rwx Pregunta1 Pregunta2
 cp pregunta1.c Pregunta1/
 
 # d) Generar el archivo ejecutable de la pregunta 2 en el directorio Pregunta2
-python pregunta2.py  # Asumiendo que el archivo ya existe y está en el mismo directorio
+python3 pregunta2.py  # Asumiendo que el archivo ya existe y está en el mismo directorio
 
 # e) Ejecutar programa en C con la opción 1 100 4 y calcular tiempo de ejecución
 echo "Ejecutando el programa en C con la opción 1 100 4..."
@@ -22,4 +22,4 @@ time ./pregunta1 1 100 4
 
 # f) Ejecutar programa en Python con la opción 1 100 4 y calcular tiempo de ejecución
 echo "Ejecutando el programa en Python con la opción 1 100 4..."
-time python pregunta2.py 1 100 4
+time python3 pregunta2.py 1 100 4
