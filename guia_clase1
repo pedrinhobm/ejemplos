@@ -1,0 +1,62 @@
+%%file calcula_final.py
+
+import sys
+
+def nota_del_final(a, b):
+  res = (110 - 3*a - 3*b) / 4
+  print("Calculando por cuánto me voy:", res)
+  return res
+
+if len(sys.argv) != 3:
+  print("Debe ingresar exactamente 2 notas")
+  sys.exit(0)
+
+x = int(sys.argv[1])
+y = int(sys.argv[2])
+
+resultado = nota_del_final(x, y)
+print(resultado)
+
+! python3 calcula_final.py 10 19   % Calculando por cuánto me voy: 5.75  5.75
+
+%%file calcula_final.c
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int nota_del_final(int a, int b){
+    return (110 - 3*a - 3*b) / 4;
+}
+
+int main(int argc, char *argv[]){
+    
+  if(argc != 3){
+      printf("Debe ingresar exactamente 2 notas\r\n");
+      return 0;
+  }
+
+  int x = atoi(argv[1]);
+  int y = atoi(argv[2]);
+
+  printf("Me voy por: %d", nota_del_final(x, y));
+}
+
+% ! gcc calcula_final.c -o calcula_final
+% ! ./calcula_final 10 19
+
+
+%%file nota_final.sh
+
+#!/usr/bin/bash
+
+time python3 calcula_final.py $1 $2
+./calcula_final $1 $2
+
+%! bash nota_final.sh 20 20
+% Calculando por cuánto me voy: 5.75
+% 5.75
+
+% real	0m0.066s
+% user	0m0.058s
+% sys	0m0.008s
+% Me voy por: 5
