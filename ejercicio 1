@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+double harmonic_mean(int A, int B) {
+    double sum = 0.0;
+    for (int i = A; i <= B; i++) {
+        sum += 1.0 / i;
+    }
+    return (B - A + 1) / sum;
+}
+
+int main() {
+    int A, B;
+    printf("Ingrese el valor de A: ");
+    scanf("%d", &A);
+    printf("Ingrese el valor de B: ");
+    scanf("%d", &B);
+
+    double result = harmonic_mean(A, B);
+    printf("La media armónica es: %lf\n", result);
+
+    return 0;
+}
+
+def harmonic_mean(A, B):
+    sum = 0.0
+    for i in range(A, B + 1):
+        sum += 1.0 / i
+    return (B - A + 1) / sum
+
+A = int(input("Ingrese el valor de A: "))
+B = int(input("Ingrese el valor de B: "))
+
+result = harmonic_mean(A, B)
+print("La media armónica es:", result)
+
+
+#!/bin/bash
+
+echo "Ejecutando programa en C..."
+time ./ejercicio1
+
+echo "Ejecutando programa en Python..."
+time python3 ejercicio1.py
